@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block content
+    h2 Sign Up
+
+    .row
+      form(action="/auth/signup", method="post")
+        .row
+          .col.s6.input-field
+            label(for="firstname") First Name
+            input(type="text" name="firstname" id="firstname" value=previousData ? previousData.firstname : '')
+          .col.s6.input-field
+            label(for="lastname") Last Name
+            input(type="text" name="lastname" id="lastname"  value=previousData ? previousData.lastname : '')
+        .row
+          .col.s6.input-field
+            label(for="username") Username
+            input(type="text" id="username" name="username"  value=previousData ? previousData.username : '')
+          .col.s6.input-field
+            label(for="email") Email
+            input(type="email", name="email" id="email"  value=previousData ? previousData.email : '')
+        .row
+          .col.s6.input-field
+            label(for="password") Password
+            input(type="password" name="password" id="password")
+          .col.s6.input-field
+            label(for="password2") Retype Password
+            input(type="password" name="password2" id="password2")
+        .row
+          .col.s6.input-field
+            label(for="dob") Date of Birth
+            input.datepicker(type="date" id="dob" name="dob" value=previousData ? previousData.dob : '1990-07-06')
+
+          .col.s6.input-field
+            label(for="image") Profile Pic URL
+            input(type="text" id="image" name="image"  value=previousData ? previousData.image : '')          
+        .row
+          .col.s12.input-field
+            label(for="bio") A little about you:
+            textarea.materialize-textarea(id="bio" name="bio")
+              =previousData ? previousData.bio : ''
+        .row    
+          .col.s12.input-field
+            input.waves-effect.waves-light.btn(type="submit" value="Submit")  

@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+  h1= `${user.firstname}'s Profile`
+
+  .row
+    .col.s3
+      div
+        img(src=user.image width="100%")
+      div= `Name: ${user.firstname} ${user.lastname}`
+      div= `Status: ${user.admin ? 'Admin' : 'User'}`
+      div= `Name: ${user.firstname} ${user.lastname}`
+    .col.s9
+      h3= `${user.firstname}'s Bio`
+      p= user.bio

@@ -1,0 +1,18 @@
+if alerts.error  
+  .row
+    .col.s12
+      .card.red.lighten-3
+        .card-content.white-text
+          span.card-title Error
+          each msg in alerts.error
+            p= msg
+
+if alerts.success
+  .row
+    .col.s12
+      .card.green.lighten-4
+        .card-content
+          span.card-title Success
+          each msg in alerts.success
+            p= msg
+

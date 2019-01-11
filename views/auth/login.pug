@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  h2 Log in
+  div.row
+    form(action="login", method="post" class="col s12")
+      .row
+        .col.s12.input-field
+          label(for="username") Username
+          input(type="text", id="username" name="username")
+      .row
+        .col.s12.input-field
+          label(for="password") Password
+          input(type="password", id="password", name="password")
+      .row
+        .col.s12.input-field
+          input.waves-effect.waves-light.btn(type="submit", value="Submit")
+          

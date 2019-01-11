@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Auth Boilerplate
+    link(rel="stylesheet" type="text/css" href="/static/style.css")
+    <!-- Compiled and minified CSS -->
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+
+body
+  nav
+    .nav-wrapper
+      a.brand-logo.left(href="/") Site
+      ul.right.hide-on-sm-and-down
+        if user
+          li
+            =`Hello, ${user.firstname}`
+          li
+            a(href="/profile") Profile 
+          li
+            a(href="/logout") Logout
+        else
+          li
+            a(href="/auth/login") Login 
+          li
+            a(href="/auth/signup") Signup 
+        
+
+  div.container
+    include includes/alerts.pug
+    block content
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+  script(src="/static/materialize_datepicker.js")
